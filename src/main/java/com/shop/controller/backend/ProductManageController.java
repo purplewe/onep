@@ -61,7 +61,7 @@ public class ProductManageController {
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),"管理员请先登录");
         }
         if (iUserService.checkAdminRole(user).isSuccess()){
-            return ;
+            return null;
         }else{
             return ServerResponse.createByErrorMessage("无权限操作");
         }
